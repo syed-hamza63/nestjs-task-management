@@ -19,8 +19,9 @@ export class TasksController {
   createTask(
     @Body('title') title: string,
     @Body('description') description: string,
+    @Body('dueDate') dueDate: string,
   ): Task {
-    return this.taskService.createTask(title, description);
+    return this.taskService.createTask(title, description,dueDate);
   }
 
   @Delete('/:id')
